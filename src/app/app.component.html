@@ -1,0 +1,13 @@
+<div class="eight">
+    <h1>Please Log In To add a ticket</h1>
+</div>
+<!-- <div class="centered">
+    <button  class="lgbtn green" (click)="login();" >Log In</button>
+    <button class="lgbtn green" [style.color]="'red'"  (click)="logout();">Log Out</button>
+</div> -->
+<!-- <p *ngIf = "isLogged">
+    Hello {{username}}
+</p> -->
+<button routerLink="tickets">Tickets Page</button>
+<button (click)="logout()">logout</button>
+<router-outlet></router-outlet>

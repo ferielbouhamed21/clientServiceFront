@@ -1,0 +1,77 @@
+    <ng-template #mymodal let-modal >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">New ticket</h4>
+                <button type="button" class="close" (click)="modal.close('Cross click')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="addTicket();modal.close();">
+    
+                    <label for="subject"> Subject:</label>
+                    <input type="text" class="form-control" id="subject" formControlName="subject" required>
+    
+                    <label for="email"> Email:</label>
+                    <input type="text" class="form-control" id="email" formControlName="email" required>
+    
+                    <label for="phone"> Phone:</label>
+                    <input type="text" class="form-control" id="phone" formControlName="phone" required>
+    
+                    <label for="classification"> Classification:</label>
+                    <input type="text" class="form-control" id="classification" formControlName="classification" required>
+    
+                    <label for="departmentId"> Department:</label>
+                    <input type="text" class="form-control" id="departmentId" formControlName="departmentId" required>
+    
+                    <label for="contactId"> Contact:</label>
+                    <input type="text" class="form-control" id="contactId" formControlName="contactId" required>
+    
+                    <label for="assigneeId"> Assignee:</label>
+                    <input type="text" class="form-control" id="assigneeId" formControlName="assigneeId" required>
+                    
+                    <label for="status"> Status:</label>
+                    <input type="text" class="form-control" id="status" formControlName="status" required>
+                    
+    
+                    <!-- <label for="department"> Select Department:</label>
+                    <select class="form-control" id="usr-department" formControlName="department" [(ngModel)]="department" required>
+                        <option value="1">Sales</option>
+                        <option value="2">IT</option>
+                        <option value="3">HR</option>
+                        <option value="4">Marketing</option>
+                    </select> -->
+                    <label for="category"> Select Category:</label>
+                    <select class="form-control" id="category" formControlName="category" required>
+                        <option value="sales">Sales</option>
+                        <option value="it">IT</option>
+                        <option value="hr">HR</option>
+                        <option value="marketing">Marketing</option>
+                    </select>
+                    <label for="language"> Select Language:</label>
+                    <select class="form-control" id="language" formControlName="language" required>
+                        <option value="frensh">Frensh</option>
+                        <option value="english">English</option>
+    
+                    </select>
+                    <label for="description"> Description:</label>
+                    <textarea class="form-control" rows="5" id="description" formControlName="description"
+                        required></textarea>
+                        <div class="form-group">
+                            <input type="file" multiple (change)="onFileSelected($event)">
+                        </div>
+    
+                            <input [style.marginTop]="'10px'" type="file" class="file-input" multiple (change)="onFileSelected($event)" #fileUpload>
+    
+                
+    
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+    
+                </form>
+            </div>
+    
+        </div>
+    </ng-template>
+    
+    
+    <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">New Ticket</button>

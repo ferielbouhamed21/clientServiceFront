@@ -1,0 +1,88 @@
+<div class="example-header" >
+    <mat-form-field appearance="fill">
+        <mat-label>Filter</mat-label>
+      <input matInput (change)="applyFilter($event)" placeholder="">
+    </mat-form-field>
+  </div>
+
+<div class="example-container mat-elevation-z8" >
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="subject">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Subject </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.subject}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="departmentId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Department </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.departmentId}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Phone </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.phone}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.status}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="language">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Language </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.language}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="productId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ProductId </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.productId}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="assigneeId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> AssigneeId </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.assigneeId}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="classification">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Classification </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.classification}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.category}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="createdAt">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> CreatedAt </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.createdAt}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="updatedAt">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> UpdatedAt </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.updatedAt}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
