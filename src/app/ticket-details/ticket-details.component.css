@@ -4,3 +4,7 @@
   .file-input {
     display: none;
   }
+  #button {
+    justify-content: center;
+    align-items: center;
+    }

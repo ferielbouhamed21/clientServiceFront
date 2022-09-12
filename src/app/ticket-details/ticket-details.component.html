@@ -9,36 +9,14 @@
     
                     <label for="subject"> Subject:</label>
                     <input type="text" class="form-control" id="subject" formControlName="subject" required>
-    
-                    <label for="email"> Email:</label>
-                    <input type="text" class="form-control" id="email" formControlName="email" required>
-    
-                    <label for="phone"> Phone:</label>
-                    <input type="text" class="form-control" id="phone" formControlName="phone" required>
-    
+     
                     <label for="classification"> Classification:</label>
                     <input type="text" class="form-control" id="classification" formControlName="classification" required>
     
-                    <label for="departmentId"> Department:</label>
-                    <input type="text" class="form-control" id="departmentId" formControlName="departmentId" required>
-    
-                    <label for="contactId"> Contact:</label>
+                    <!-- <label for="contactId"> Contact:</label>
                     <input type="text" class="form-control" id="contactId" formControlName="contactId" required>
+                     -->
     
-                    <label for="assigneeId"> Assignee:</label>
-                    <input type="text" class="form-control" id="assigneeId" formControlName="assigneeId" required>
-                    
-                    <label for="status"> Status:</label>
-                    <input type="text" class="form-control" id="status" formControlName="status" required>
-                    
-    
-                    <!-- <label for="department"> Select Department:</label>
-                    <select class="form-control" id="usr-department" formControlName="department" [(ngModel)]="department" required>
-                        <option value="1">Sales</option>
-                        <option value="2">IT</option>
-                        <option value="3">HR</option>
-                        <option value="4">Marketing</option>
-                    </select> -->
                     <label for="category"> Select Category:</label>
                     <select class="form-control" id="category" formControlName="category" required>
                         <option value="sales">Sales</option>
@@ -48,7 +26,7 @@
                     </select>
                     <label for="language"> Select Language:</label>
                     <select class="form-control" id="language" formControlName="language" required>
-                        <option value="frensh">Frensh</option>
+                        <option value="french">French</option>
                         <option value="english">English</option>
     
                     </select>
@@ -61,8 +39,6 @@
     
                             <input [style.marginTop]="'10px'" type="file" class="file-input" multiple (change)="onFileSelected($event)" #fileUpload>
     
-                
-    
                     <button type="submit" class="btn btn-primary">
                         Submit
                     </button>
@@ -74,4 +50,4 @@
     </ng-template>
     
     
-    <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">New Ticket</button>
+    <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)" id="button">New Ticket</button>

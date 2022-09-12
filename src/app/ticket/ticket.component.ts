@@ -13,17 +13,12 @@ import { TicketService } from '../service/tickets.service';
 })
 export class TicketComponent implements OnInit {
 
-  tickets: Ticket[] ;
-  //  @Input() isLogged: boolean ;
-  //  @Input() isAdmin: boolean ;
 
   constructor(private ticketService: TicketService) { }
 
   ngOnInit(): void {
     
-    this.ticketService.findAll().subscribe(data => {
-      this.tickets = data;
-    });
+
   }
   
 }

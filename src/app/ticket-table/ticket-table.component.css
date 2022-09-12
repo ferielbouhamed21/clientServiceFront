@@ -1,0 +1,61 @@
+
+.mat-column-description {
+	flex: none;
+	width: 150px;
+    padding: 10px;
+}
+
+.mat-column-id {
+	flex: none;
+	width: 120px;
+    padding: 10px;
+}
+
+
+.mat-column-subject {
+	flex: none;
+	width: 150px;
+    padding: 10px;
+}
+
+.mat-column-status {
+	flex: none;
+	width: 70px;
+    padding: 10px;
+}
+
+
+.mat-column-language {
+	flex: none;
+	width: 100px;
+    padding: 10px;
+}
+
+.mat-column-createdAt {
+	flex: none;
+	width: 150px;
+    padding: 10px;
+}
+
+
+.mat-column-updatedAt {
+	flex: none;
+	width: 150px;
+    padding: 10px;
+}
+
+.mat-column-category {
+	flex: none;
+	width: 100px;
+    padding: 10px;
+}
+
+
+.mat-column-classification {
+	flex: none;
+	width: 150px;
+    padding: 10px;
+}
+
+
+

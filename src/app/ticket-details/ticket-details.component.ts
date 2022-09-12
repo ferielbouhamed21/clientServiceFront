@@ -13,6 +13,7 @@ export class TicketDetailsComponent implements OnInit {
   closeResult = '';
   fileName = '';
   form: FormGroup;
+  file : File;
   
 
   constructor(private ticketService: TicketService, private modalService: NgbModal,) {  }
@@ -39,33 +40,31 @@ export class TicketDetailsComponent implements OnInit {
     this.form = new FormGroup({
       subject: new FormControl(''),
       description: new FormControl(''),
-      email: new FormControl(''),
-      phone: new FormControl(''),
       classification: new FormControl(''),
       category: new FormControl(''),
       language: new FormControl(''),
-      departmentId: new FormControl(''),
-      contactId: new FormControl(''),
-      assigneeId: new FormControl(''),
-      status: new FormControl('')
+      //contactId: new FormControl(''),
+
     });
   }
 
   //add ticket from form
   addTicket(): any {
 
-    this.ticketService.save(this.form.value).subscribe(
-
-      (erreur) => console.log(erreur)
-
+    return this.ticketService.save(this.form.value).subscribe(res =>
+      (
+        console.log(res),
+         this.ticketService.uploadFile(this.file, res.id ).subscribe(
+        (erreur) => console.log(erreur))
     )
+    )
+    
   }
 
   onFileSelected(event: any) {
 
-    const file: File = event.target.files[0];
-    this.ticketService.uploadFile(file, "753510000000311001").subscribe(
-      (erreur) => console.log(erreur));
+    this.file = event.target.files[0];
+    
   }
 
 }

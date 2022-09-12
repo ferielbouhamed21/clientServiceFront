@@ -1,4 +1,5 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient,HttpParams } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
@@ -15,13 +16,13 @@ export class TicketService {
   constructor(private http: HttpClient) { }
 
 
-  public findAll(): Observable<Ticket[]> {
+  public findAll(page:number,itemsPerPage:number): Observable<Ticket[]> {
     return this.http.get<Ticket[]>(this.apiUrl);
   }
 
-  public save(createdTicket: createdTicket):Observable<Ticket> {
-    console.log(createdTicket);
-    return this.http.post<Ticket>(this.apiUrl, createdTicket);
+  public save(createdTicket: createdTicket):Observable<any> {
+  
+    return this.http.post<any>(this.apiUrl, createdTicket);
   }
 
   public getTicket(ticketId: String): Observable<Ticket> {
@@ -36,11 +37,16 @@ export class TicketService {
     return this.http.put<Ticket>(this.apiUrl + '/' + ticket.id, ticket);
   }
 
-  public getTicketsByUserId(userId: String): Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(this.apiUrl + '/user/' + userId);
+  public getTicketsByUser(page:number,itemsPerPage:number): Observable<Ticket[]> {
+
+    let params = new HttpParams();
+    params = params.append('pageNo', page);
+    params = params.append('pageSize', itemsPerPage);
+
+    return this.http.get<Ticket[]>(this.apiUrl + '/user/', {params});
   }
 
-  public uploadFile(file: File, ticketId: String): Observable<any> {
+  public uploadFile(file: File, ticketId: string): Observable<any> {
     const formData = new FormData();
     formData.append('file', file);
     return this.http.post<any>(this.apiUrl + '/attachement/'+ticketId, formData);

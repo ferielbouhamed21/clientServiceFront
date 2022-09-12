@@ -7,7 +7,7 @@ export const environment = {
   serverUrl: '/api',
   keycloak: {
     // Url of the Identity Provider
-    issuer: 'http://localhost:8080/auth/',
+    issuer: 'http://localhost:8180/auth/',
     // Realm
     realm: 'advyProject',
     clientId: 'frontEnd',
